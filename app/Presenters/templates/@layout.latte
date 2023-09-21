@@ -5,15 +5,22 @@
 	<meta name="viewport" content="width=device-width">
 
 	<title>{ifset title}{include title|stripHtml} | {/ifset}Nette Web</title>
+	<link rel="stylesheet" href="https://newpvsstorage.z16.web.core.windows.net/cdn/0.0.14/build/core.css">
+	<script type="module" src="https://newpvsstorage.z16.web.core.windows.net/cdn/0.0.14/build/core.esm.js"></script>
 </head>
 
 <body>
 	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
 
+	<div id="outlet">
 	{include content}
+	</div>
 
 	{block scripts}
 	<script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
+		<script>
+			window.onload = (event) => {};
+		</script>
 	{/block}
 </body>
 </html>
